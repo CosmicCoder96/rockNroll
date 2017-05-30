@@ -8,10 +8,10 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('bands', function() {
-    this.route('songs');
-
     this.route('band', {
-      path: ':slug'
+      path: ':slug', function() {
+        this.route('songs');
+      }
     });
   });
 });
