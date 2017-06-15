@@ -1,7 +1,12 @@
 import Ember from 'ember';
 var Band = Ember.Object.extend({ name: '',
-  songs: []
+  songs: [],
+
+  slug: Ember.computed('name', function() {
+    return this.get('name').dasherize();
+  })
 });
+
 
 var Song = Ember.Object.extend({ title: '',
   rating: 0,
