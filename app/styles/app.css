@@ -20,3 +20,14 @@
   color: #aaa;
   font-size: 1.1em;
 }
+.new-song { width: 50%;
+}
+.new-song-button { margin-left: 20px;
+}
+.new-band {
+  width: 82%;
+}
+.new-band-button {
+  float:right;
+  padding: 3px 10px;
+}
