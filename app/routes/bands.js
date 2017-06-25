@@ -22,5 +22,11 @@ export default Ember.Route.extend({ model: function() {
     [yellowLedbetter, daughter] });
   var fooFighters = Band.create({ name: 'Foo Fighters', songs:
     [pretender] });
-  return [ledZeppelin, pearlJam, fooFighters]; }
+  return [ledZeppelin, pearlJam, fooFighters]; },
+
+  actions: {
+  createBand: function() {
+    
+  }
+  }
 });
