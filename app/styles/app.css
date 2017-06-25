@@ -31,3 +31,9 @@
   float:right;
   padding: 3px 10px;
 }
+a.star-rating {
+  color: inherit; text-decoration: none;
+}
+.rating-panel {
+  float:right;
+}
