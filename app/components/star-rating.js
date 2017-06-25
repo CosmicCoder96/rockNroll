@@ -5,6 +5,8 @@ export default Ember.Component.extend({
   classNames: ['rating-panel'],
   rating: 0,
   maxRating: 5,
+  item : null,
+  onClick: '',
   stars: Ember.computed('rating', 'maxRating', function() {
     var fullStars = this.starRange(1, this.get('rating'), 'full'); var emptyStars = this.starRange(this.get('rating') + 1,
       this.get('maxRating'), 'empty');
@@ -16,6 +18,14 @@ export default Ember.Component.extend({
       starsData.push({ rating: i, full: type === 'full' });
     }
     return starsData;
+  },
+  actions: {
+    setRating: function(newRating) {
+      this.sendAction('onClick', {
+        item: this.get('item'),
+        rating: newRating
+      });
+    }
   }
 });
 

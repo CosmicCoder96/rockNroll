@@ -8,7 +8,7 @@
   {{#each model.songs as |song|}}
     <li class="list-group-item song">
       {{song.title}}
-      {{star-rating rating=song.rating}}
+      {{star-rating rating=song.rating item=song onClick='updateRating'}}
     </li>
   {{/each}}
 </ul>
