@@ -17,6 +17,11 @@ export default Route.extend({
       var song = Song.create({title: title, band: band});
       band.get('songs').pushObject(song);
       controller.set('title', '');
+    },
+
+    didTransition() {
+      var band = this.modelFor('bands.band');
+      document.title = `${band.get('name')} songs - Rock & Roll`;
     }
   },
 
