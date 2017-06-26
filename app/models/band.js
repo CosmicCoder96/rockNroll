@@ -1,16 +1,15 @@
 import Ember from 'ember';
+import DS from 'ember-date';
 
-const { Object, computed, on } = Ember;
-export default Object.extend(
+const { computed } = Ember;
+const { Model, attr, hasMany } = DS;
+
+export default Model.extend(
   {
-    name        : '',
-    description : '',
+    name        : attr('string'),
+    description : attr(),
+    songs       : hasMany('song'),
     slug        : computed('name', function () {
       return this.get('name').dasherize();
-    }),
-    setupSongs: on('init', function () {
-      if (!this.get('songs')) {
-        this.set('songs', []);
-      }
     })
   });
