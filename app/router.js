@@ -9,7 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('bands', function() {
     this.route('band', {
-      path: '/:slug'}, function() {
+      path: '/:id'}, function() {
       this.route('songs');
       this.route('albums');
       this.route('details');
