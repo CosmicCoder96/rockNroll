@@ -10,13 +10,16 @@ export default Route.extend({
 
   actions: {
     createSong() {
-      var controller = this.get('controller');
-      var band = this.modelFor('bands.band');
-      var title = controller.get('title');
+      let controller = this.get('controller');
+      let band = this.modelFor('bands.band');
 
-      var song = Song.create({title: title, band: band});
-      band.get('songs').pushObject(song);
-      controller.set('title', '');
+      let song = this.store.createRecord('song', {
+        title: controller.get('title'),
+        band
+      });
+      song.save().then(function() {
+        controller.set('title', '');
+      });
     },
 
     didTransition() {
