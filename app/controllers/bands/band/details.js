@@ -9,6 +9,7 @@ export default Controller.extend({
     },
     save() {
       this.set('isEditing', false);
+      return true;
     }
   }
 });
